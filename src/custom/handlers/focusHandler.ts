@@ -25,7 +25,7 @@ export function addFocusHandler(
 ) {
   // Remove the old listeners
   window.removeEventListener("blur", focusHandler.onBlur);
-  window.removeEventListener("blur", focusHandler.onFocus);
+  window.removeEventListener("focus", focusHandler.onFocus);
 
   const alwaysDimmable =
     ".minimap, .decorationsOverviewRuler, .composite.title, .title.tabs, .editor-container:has(.settings-editor)";

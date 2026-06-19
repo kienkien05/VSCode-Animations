@@ -4,6 +4,13 @@ All notable changes to the "VSCode Animations" extension will be documented in t
 
 <!-- ## [version] - yyyy-mm-dd -->
 
+## [2.0.8] - 2026-06-19
+
+- Updated build and test tooling for VS Code 1.125.
+- Added the missing Sass build dependency.
+- Fixed focus dimming listener cleanup.
+- Fixed cursor animation timer typing for newer Node typings.
+
 ## [2.0.7] - 2025-01-03
 
 - Fixed commands not being found bug

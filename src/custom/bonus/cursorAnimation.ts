@@ -34,7 +34,7 @@ export class CursorAnimation {
     stop: () => void;
   };
 
-  private _interval: NodeJS.Timer | null = null;
+  private _interval: ReturnType<typeof setInterval> | null = null;
 
   /**
    * The constructor for the cursor animation

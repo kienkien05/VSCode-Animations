@@ -1,12 +1,27 @@
 import * as path from 'path';
+import * as fs from 'fs';
 
 import { runTests } from '@vscode/test-electron';
+
+function findExtensionDevelopmentPath(startPath: string): string {
+	let currentPath = startPath;
+
+	while (currentPath !== path.dirname(currentPath)) {
+		if (fs.existsSync(path.join(currentPath, 'package.json'))) {
+			return currentPath;
+		}
+
+		currentPath = path.dirname(currentPath);
+	}
+
+	return path.resolve(__dirname, '../../');
+}
 
 async function main() {
 	try {
 		// The folder containing the Extension Manifest package.json
 		// Passed to `--extensionDevelopmentPath`
-		const extensionDevelopmentPath = path.resolve(__dirname, '../../');
+		const extensionDevelopmentPath = findExtensionDevelopmentPath(__dirname);
 
 		// The path to test runner
 		// Passed to --extensionTestsPath
